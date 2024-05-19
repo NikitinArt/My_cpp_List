@@ -32,7 +32,6 @@ void MyList::push_back(const int value) {
 void MyList::push_up(const int value) {
 	Node* new_node = new Node(value);
 
-
 	if (first == nullptr) {
 
 		first = last = new_node;
@@ -45,11 +44,10 @@ void MyList::push_up(const int value) {
 	new_node->pnext = first;
 
 	first = new_node;
-
 }
 
 void MyList::show() {
-	if (!first) return;
+	if (first == nullptr) return;
 
 	Node* iter_node = first;
 
@@ -61,7 +59,7 @@ void MyList::show() {
 }
 
 void MyList::remove(const int value) {
-	if (!first) return;
+	if (first == nullptr) return;
 
 	if (first->value == value) {
 		Node* p = first;
@@ -86,7 +84,7 @@ void MyList::remove(const int value) {
 
 		p = this->find(value);
 
-		if (!p) return;
+		if (p == nullptr) return;
 
 		Node* pprevious = p->pprevious;
 		Node* pnext = p->pnext;
@@ -100,7 +98,6 @@ void MyList::remove(const int value) {
 }
 
 MyList::Node* MyList::find(const int value) {
-
 	Node* p = first;
 
 	while (p && p->value != value) p = p->pnext;
