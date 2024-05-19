@@ -24,14 +24,12 @@ void MyList::push_back(const int value) {
 	new_node->pprevious = last;
 
 	last = new_node;
-
 }
 
 void MyList::push_up(const int value) {
 	Node* new_node = new Node(value);
 
 	if (first == nullptr) {
-
 		first = last = new_node;
 
 		return;
