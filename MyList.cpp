@@ -12,8 +12,6 @@ MyList::Node::Node(const int value) {
 void MyList::push_back(const int value) {
 	Node* new_node = new Node(value);
 
-	new_node->value = value;
-
 	if (first == nullptr) {
 
 		first = last = new_node;
