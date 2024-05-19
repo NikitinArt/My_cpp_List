@@ -76,9 +76,7 @@ void MyList::remove(const int value) {
 		delete p;
 	}
 	else {
-		Node* p;
-
-		p = this->find(value);
+		Node* p = this->find(value);
 
 		if (p == nullptr) return;
 
@@ -96,7 +94,7 @@ void MyList::remove(const int value) {
 MyList::Node* MyList::find(const int value) {
 	Node* p = first;
 
-	while (p && p->value != value) p = p->pnext;
+	while (p != nullptr && p->value != value) p = p->pnext;
 
-	return (p && p->value == value) ? p : nullptr;
+	return (p != nullptr && p->value == value) ? p : nullptr;
 }
